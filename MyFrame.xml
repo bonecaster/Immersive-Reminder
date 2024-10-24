@@ -1,0 +1,414 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+
+	<Button name="ReminderButton" virtual="true">
+		<Size>
+			<AbsDimension x="300" y="16"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString text = "tag" name="$parentTag" inherits="GameFontNormal" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="0" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT">
+							<Offset>
+								<AbsDimension x="-2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--
+				<FontString text = "My Reminder" name="$parentGroupMates" inherits="GameFontNormalSmall" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="0" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				-->
+				<Texture name="$parentCheck" file="Interface\Buttons\UI-CheckBox-Check" hidden="true">
+					<Size>
+						<AbsDimension x="16" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="50" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				
+			</OnLoad>
+			<OnEvent>
+				
+			</OnEvent>
+			<OnClick>
+				
+			</OnClick>
+			<OnEnter>
+				
+			</OnEnter>
+			<OnLeave>
+				
+			</OnLeave>
+		</Scripts>
+		<NormalTexture file="Interface\Buttons\UI-MinusButton-UP">
+			<Size>
+				<AbsDimension x="16" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT">
+					<Offset>
+						<AbsDimension x="3" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</NormalTexture>
+		<HighlightTexture name="$parentHighlight" file="Interface\Buttons\UI-PlusButton-Hilight" alphaMode="ADD">
+			<Size>
+				<AbsDimension x="16" y="16"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT">
+					<Offset>
+						<AbsDimension x="3" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</HighlightTexture>
+		<ButtonText name="$parentNormalText" parentKey="Text" justifyH="LEFT" nonspacewrap="true">
+			<Size>
+				<AbsDimension x="0" y="10"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT">
+					<Offset>
+						<AbsDimension x="20" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</ButtonText>
+		<NormalFont style="GameFontNormal"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontHighlight"/>
+	</Button>
+   
+   <Frame name="ImmersiveReminder_RemindersFrame" hidden = "true">
+        <Size><AbsDimension x="384" y="512"/></Size>
+        <Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+        <Layers>
+               <Layer level = "BACKGROUND" textureSubLevel = "0">
+                    <Texture file="Interface\AddOns\MyAddon\black-circle">
+					<Size>
+						<AbsDimension x="64" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="4" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                    
+               </Layer>
+               <Layer level = "BACKGROUND" textureSubLevel = "1">
+                    <Texture file="Interface\QuestFrame\QuestBackgroundHordeAlliance">
+					<TexCoords left="0.00391" right="0.09277" top="0.88574" bottom="0.97363"/>
+                         <Size>
+						<AbsDimension x="62" y="62"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="6" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                    
+               </Layer>
+               <Layer level="ARTWORK">
+				<Texture file="Interface\QuestFrame\UI-QuestLog-TopLeft">
+					<Size>
+						<AbsDimension x="256" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture file="Interface\QuestFrame\UI-QuestLog-TopRight">
+					<Size>
+						<AbsDimension x="128" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPRIGHT"/>
+					</Anchors>
+				</Texture>
+				<Texture file="Interface\QuestFrame\UI-QuestLog-BotLeft">
+					<Size>
+						<AbsDimension x="256" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture file="Interface\QuestFrame\UI-QuestLog-BotRight">
+					<Size>
+						<AbsDimension x="128" y="256"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT"/>
+					</Anchors>
+				</Texture>
+               </Layer>
+        </Layers>
+        <Frames>
+               <Button name="QuestLogFrameCloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-30" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+		     </Button>
+
+
+
+            <Button parentKey = "ReminderTitle1" inherits="ReminderButton" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ImmersiveReminder_RemindersFrame">
+						<Offset>
+							<AbsDimension x="19" y="-75"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey = "ReminderTitle2" inherits="ReminderButton" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.ReminderTitle1" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey = "ReminderTitle3" inherits="ReminderButton" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.ReminderTitle2" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey = "ReminderTitle4" inherits="ReminderButton" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.ReminderTitle3" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey = "ReminderTitle5" inherits="ReminderButton" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.ReminderTitle4" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button parentKey = "ReminderTitle6" inherits="ReminderButton" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.ReminderTitle5" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+
+
+			<!--
+			<ScrollFrame parentKey = "ReminderListScrollFrame" inherits="FauxScrollFrameTemplate">
+				<Size>
+					<AbsDimension x="300" y="93"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ImmersiveReminder_RemindersFrame">
+						<Offset>
+							<AbsDimension x="19" y="-75"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnVerticalScroll>
+						FauxScrollFrame_OnVerticalScroll(self, offset, QUESTLOG_QUEST_HEIGHT, QuestLog_Update);
+					</OnVerticalScroll>
+				</Scripts>
+			</ScrollFrame>
+
+			<ScrollFrame parentKey = "ReminderDetailsScrollFrame" inherits="UIPanelScrollFrameTemplate">
+				<Size>
+					<AbsDimension x="300" y="260"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.ReminderListScrollFrame" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="0" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<ScrollChild>
+					<Frame parentKey = "ReminderListDetailsScrollChildFrame">
+						<Size>
+							<AbsDimension x="300" y="260"/>
+						</Size>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString parentKey = "ReminderTitle" inherits="QuestTitleFont" justifyH="LEFT" text="Reminder Title">
+									<Size>
+										<AbsDimension x="285" y="0"/>
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT">
+											<Offset>
+												<AbsDimension x="5" y="-5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="Reminder Text" inherits="QuestFont" justifyH="LEFT">
+									<Size>
+										<AbsDimension x="275" y="0"/>
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT" relativeTo="QuestLogQuestTitle" relativePoint="BOTTOMLEFT">
+											<Offset>
+												<AbsDimension x="0" y="-5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="QuestLogItem1" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem2" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem3" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem4" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem5" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem6" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem7" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem8" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem9" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Button name="QuestLogItem10" inherits="QuestLogRewardItemTemplate" hidden="true">
+								<Anchors>
+									<Anchor point="TOPLEFT"/>
+								</Anchors>
+							</Button>
+							<Frame name="QuestLogMoneyFrame" inherits="MoneyFrameTemplate">
+								<Anchors>
+									<Anchor point="LEFT" relativeTo="QuestLogItemReceiveText" relativePoint="RIGHT">
+										<Offset>
+											<AbsDimension x="15" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnLoad>
+										QuestMoneyFrame_OnLoad(self);
+									</OnLoad>
+								</Scripts>
+							</Frame>
+							<Frame name="QuestLogRequiredMoneyFrame" inherits="MoneyFrameTemplate">
+								<Anchors>
+									<Anchor point="LEFT" relativeTo="QuestLogRequiredMoneyText" relativePoint="RIGHT">
+										<Offset>
+											<AbsDimension x="10" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnLoad>
+										SmallMoneyFrame_OnLoad(self);
+										MoneyFrame_SetType(self, "STATIC");
+									</OnLoad>
+								</Scripts>
+							</Frame>
+							<Frame name="QuestLogSpacerFrame">
+								<Size>
+									<AbsDimension x="5" y="25"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOP">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+						</Frames>
+					</Frame>
+				</ScrollChild>
+			</ScrollFrame>
+
+			-->
+        </Frames>
+   </Frame>
+</Ui>

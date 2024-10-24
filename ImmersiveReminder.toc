@@ -1,0 +1,12 @@
+## Interface: 11502
+## Version: 1.0.0
+## Title: Immersive Reminder
+## Notes: Allows you to set zone-triggered reminders.
+## Author: Alexander
+## SavedVariables: ReminderDB
+
+MyFrame.xml
+config.lua
+WowZones.lua
+Reminders.lua
+init.lua
